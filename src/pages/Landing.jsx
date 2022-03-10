@@ -3,6 +3,7 @@ import Lists from "../components/Lists";
 import { Link } from 'react-router-dom'
 import edit from '../icons/create-icon.svg'
 import propic from '../icons/gary-vaynerchuk-hero1.svg'
+
 const Landing = (props) => {
   return (
     <>
