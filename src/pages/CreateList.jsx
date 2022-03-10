@@ -37,8 +37,8 @@ const CreateList = (props) => {
         onSubmit={handleSubmit}
       >
       <div className="flex mb-[24px]">
-        <div className="flex-auto"><Link to="/">Cancel</Link></div>
-        <button className="flex-auto" disabled={isFormInvalid()}>Done</button>
+        <div className="flex-auto text-sm text-default hover:text-off-black"><Link to="/">Cancel</Link></div>
+        <button className="flex-auto text-sm text-default hover:text-off-black" disabled={isFormInvalid()}>Done</button>
       </div>
         <input
           placeholder='List title'
@@ -46,7 +46,7 @@ const CreateList = (props) => {
           name="listName"
           value={listName}
           onChange={handleChange}
-          className="focus:outline-none input input-ghost w-full max-w-xs caret-cursor-teal leading-[24px]text-[28px]"
+          className="focus:outline-none input input-ghost w-full max-w-xs caret-cursor-teal leading-[24px]text-[28px] text-md"
         />
       </form>
     </div>

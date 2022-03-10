@@ -2,11 +2,10 @@ const Lists = (props) => {
 
   return (
     <>
-      {console.log(props.lists[0].listName)}
       {props.lists.map(list => {
         return (
           <>
-          <div className="flex rounded-lg border-2 h-[60px] mb-[16px]">
+          <div className="flex rounded-lg border-2 h-[60px] mb-[16px] text-off-black hover:drop-shadow-sm">
               <div key={list.listName} className="ml-[16px]">{
                 list.listName}
               </div>
