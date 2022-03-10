@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import cancelDefault from '../icons/cancel-default.svg'
 import cancelHover from '../icons/cancel-hover.svg'
 
+
 const CreateList = (props) => {
   const navigate = useNavigate()
   const [formData, setFormData] = useState({
@@ -53,11 +54,11 @@ const CreateList = (props) => {
             src={cancelIcon ? cancelHover : cancelDefault}
             alt="cancel icon"
           />
-          <Link to="/" className='ml-[4px]'>
+          <Link to="/" className='ml-[4px] font-bold'>
             Cancel
           </Link>
         </div>
-        <button className="ml-auto mobile:mr-[16px] desktop-sm:mr-[40px] hover:text-off-black" disabled={isFormInvalid()}>Done</button>
+        <button className="ml-auto mobile:mr-[16px] desktop-sm:mr-[40px] hover:text-off-black font-bold" disabled={isFormInvalid()}>Done</button>
       </div>
         <input
           placeholder='List title'
@@ -65,7 +66,7 @@ const CreateList = (props) => {
           name="listName"
           value={listName}
           onChange={handleChange}
-          className="focus:outline-none input input-ghost w-full caret-cursor-teal leading-[24px]text-[28px] text-md p-0"
+          className="focus:outline-none input input-ghost w-full caret-cursor-teal leading-[24px]text-[28px] text-md p-0 font-semibold"
         />
       </form>
     </div>

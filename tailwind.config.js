@@ -21,12 +21,14 @@ module.exports = {
         'border-stroke-color': '#ECECEC',
         'default': '#505050',
         'hover': '#F4F4F4',
-        'off-black': '#242424'
+        'off-black': '#242424',
+        'error-red': '#FF3333'
       },
     },
   },
   daisyui: {
     themes: false,
+    styled: false,
   },  
   plugins: [require("daisyui")],
 }

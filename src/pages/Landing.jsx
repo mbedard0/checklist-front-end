@@ -17,7 +17,7 @@ const Landing = (props) => {
                 </div>
               </div>
             </div>
-            <div className="flex-none font-bold text-lg ml-[16px]">
+            <div className="flex-none font-bold text-lg ml-[16px] p-0">
               Lists
             </div>
             <div className="flex-auto">
