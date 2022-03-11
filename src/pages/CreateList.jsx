@@ -27,11 +27,6 @@ const CreateList = (props) => {
       console.log(e)
     }
   }
-
-  const handleClick = e => {
-
-  }
-
   const { listName } = formData
 
   const isFormInvalid = () => {

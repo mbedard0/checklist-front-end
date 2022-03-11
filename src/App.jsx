@@ -12,10 +12,14 @@ const App = () => {
     setLists([...lists, formData])
   }
 
+  const handleDelete = listName => {
+    setLists(lists.filter(listName => !listName))
+  }
+
   return (
     <>
       <Routes>
-        <Route path="/" element={<Landing lists={lists}/>}/>
+        <Route path="/" element={<Landing lists={lists} handleDelete={handleDelete}/>}/>
         <Route path="/create-list" element={<CreateList handleSubmit={handleSubmit}/>} />
         <Route path="/edit" element={<EditList></EditList>} />
       </Routes>
