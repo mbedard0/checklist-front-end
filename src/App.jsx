@@ -12,8 +12,15 @@ const App = () => {
     setLists([...lists, formData])
   }
 
+  const handleEdit = formData => {
+    console.log(formData.oldListName)
+    // could delete old list and create a new one
+    setLists(lists.filter(listName => !formData.oldListName))
+    setLists([...lists, formData.listName])
+  }
+
   const handleDelete = listName => {
-    setLists(lists.filter(listName => !listName))
+    setLists(lists.filter(list => list.listName !== listName))
   }
 
   return (
@@ -21,7 +28,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Landing lists={lists} handleDelete={handleDelete}/>}/>
         <Route path="/create-list" element={<CreateList handleSubmit={handleSubmit}/>} />
-        <Route path="/edit" element={<EditList></EditList>} />
+        <Route path="/edit" element={<EditList handleEdit={handleEdit}/>} />
       </Routes>
     </>
   );
