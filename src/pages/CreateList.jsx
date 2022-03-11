@@ -14,7 +14,8 @@ const CreateList = (props) => {
   const handleChange = e => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
+      id: Math.random().toString()
     })
   }
   

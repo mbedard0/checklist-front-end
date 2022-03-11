@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Routes, Route, useNavigate, Navigate } from 'react-router-dom'
 import Landing from './pages/Landing';
 import CreateList from './pages/CreateList';
@@ -13,10 +13,8 @@ const App = () => {
   }
 
   const handleEdit = formData => {
-    console.log(formData.oldListName)
-    // could delete old list and create a new one
-    setLists(lists.filter(listName => !formData.oldListName))
-    setLists([...lists, formData.listName])
+    const newListArray = lists.map(list => list.id === formData.id ? formData : list)
+    setLists(newListArray)
   }
 
   const handleDelete = listName => {

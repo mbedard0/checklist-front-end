@@ -10,7 +10,7 @@ const EditList = (props) => {
   const navigate = useNavigate()
   const [formData, setFormData] = useState({
     listName: location.state.listName,
-    oldListName: location.state.listName
+    id: location.state.id
   })
   const [cancelIcon, setCancelIcon] = useState(false)
 
