@@ -23,10 +23,7 @@ const App = () => {
 
   return (
     <>
-      <div 
-        className="h-screen"
-        onClick={(() => console.log('page'))}
-      >
+      <div>
         <Routes>
           <Route path="/" element={<Landing lists={lists} handleDelete={handleDelete}/>}/>
           <Route path="/create-list" element={<CreateList handleSubmit={handleSubmit}/>} />
