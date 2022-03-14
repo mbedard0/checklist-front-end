@@ -27,7 +27,7 @@ const ListItem = ({ list, handleDelete }) => {
             </label>
           </div>
         </div>
-        {dropdown && <div className='relative '>
+        {dropdown && <div className='relative'>
           <ul class="dropdown-content menu p-0 shadow bg-base-100 rounded w-[123px] absolute right-[16px]  top-[0px] z-20 -mt-[24px]">
             <Link to="/edit" state={list}>
               <li className='hover:bg-hover' >
