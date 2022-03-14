@@ -12,11 +12,12 @@ const Lists = (props) => {
 
   return (
     <>
+      <div className='flex flex-col'>
       {props.lists.map(list => {
         return (
           <>
-            <div className="flex rounded-lg border-[.75px] border-border-stroke-color h-[60px] mb-[16px] text-off-black hover:drop-shadow-sm">
-              <div key={list.listName} className="flex-auto mx-[16px] mt-[14px]">{list.listName}
+            <div className="flex rounded-lg border-[.75px] border-border-stroke-color h-[60px] mb-[16px] text-off-black hover:drop-shadow-sm hover:z-10 desktop-lg:mx-[384px] ">
+              <div key={list.listName} className="flex-auto mx-[16px] mt-[14px] truncate text-sm-md font-semibold">{list.listName}
               </div>
               <div className="dropdown dropdown-end mx-[16px]">
                   <label tabindex="0" class="btn text-off-black leading-[32px] mt-[8px]">
@@ -57,7 +58,7 @@ const Lists = (props) => {
           </>
         )
       })}
-      {/* line height 60, margins 16 around each element */}
+      </div>
     </>
   );
 }
