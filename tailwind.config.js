@@ -13,7 +13,6 @@ module.exports = {
       'sm-md': '20px',
       'md': '28px',
       'lg': '32px'
-      // 28 (list name when typing), 18 buttons (top done, cancel, edit, delete), 20 for list, 32 (Lists on main page)
     },
     extend: {
       colors: {

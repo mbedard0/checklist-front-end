@@ -50,7 +50,7 @@ const CreateList = (props) => {
                 Cancel
               </Link>
             </div>
-            <button className="ml-auto mobile:mr-[16px] desktop-sm:mr-[40px] text-sm text-default hover:text-off-black active:text-cursor-teal font-bold" disabled={isFormInvalid()}>Done</button>
+            <button className="ml-auto text-sm text-default hover:text-off-black active:text-cursor-teal font-bold" disabled={isFormInvalid()}>Done</button>
           </div>
           <input
             placeholder='List title'
