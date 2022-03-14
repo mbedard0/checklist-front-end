@@ -1,13 +1,12 @@
 import AddListContainer from "../components/AddListContainer";
 import Lists from "../components/Lists";
 import { Link } from 'react-router-dom'
-import edit from '../icons/create-icon.svg'
 import propic from '../icons/gary-vaynerchuk-hero1.svg'
 
 const Landing = (props) => {
   return (
     <>
-      <div className="desktop-sm:mx-[40px] desktop-lg:mx-[40px] mobile:mx-[24px] ">
+      <div className="desktop-sm:mx-[40px] desktop-lg:mx-[40px] mobile:mx-[24px]">
         <div className="mt-[32px]">
           <div className="flex items-center">
               <div className="avatar">

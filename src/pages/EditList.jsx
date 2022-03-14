@@ -1,8 +1,6 @@
 import { Link, useNavigate } from 'react-router-dom'
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { useLocation } from "react-router-dom";
-import cancelDefault from '../icons/cancel-default.svg'
-import cancelHover from '../icons/cancel-hover.svg'
 
 
 const EditList = (props) => {

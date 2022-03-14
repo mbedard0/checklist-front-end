@@ -1,34 +1,44 @@
-import EditList from '../pages/EditList'
 import { Link } from 'react-router-dom'
-import { useNavigate } from 'react-router-dom'
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 
 const ListItem = ({ list, handleDelete }) => {
-  const navigate = useNavigate()
+  const ref = useRef()
   const [dropdown, setDropdown] = useState(false);
   const deleteFunc = e => {
     handleDelete(e)
-    navigate('/')
   }
+
+  useEffect(() => {
+    function handleClickOutside(event) {
+      if (ref.current && !ref.current.contains(event.target)) {
+        setDropdown(false)
+      }
+    }
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [ref]);
+
 
   return (
     <>
-      <div className=' '>
-        <div className="active:bg-hover flex rounded-lg border-[.75px] border-border-stroke-color h-[60px] mb-[16px] text-off-black hover:drop-shadow-sm hover:z-0 desktop-lg:mx-[384px]">
-          <div key={list.listName} className="flex-auto mx-[16px] mt-[14px] truncate text-sm-md font-semibold">{list.listName}
+      <div className='' ref={ref}>
+        <div className="active:bg-hover flex items-center rounded-lg border-[.75px] border-border-stroke-color h-[60px] mb-[16px] text-off-black hover:drop-shadow-sm hover:z-0 desktop-lg:mx-[384px]">
+          <div key={list.listName} className="flex-auto mx-[16px] truncate text-sm-md font-semibold">{list.listName}
           </div>
           <div className="" onClick={() => {
             setDropdown(!dropdown)
           }}>
             <label class="btn text-off-black ml-[16px]">
-              <svg width="18" height="4" viewBox="0 0 18 4" fill="currentColor" xmlns="http://www.w3.org/2000/svg" className='mt-[8px] '>
+              <svg width="18" height="4" viewBox="0 0 18 4" fill="currentColor" xmlns="http://www.w3.org/2000/svg" className=''>
                 <path d="M13.375 2C13.375 0.964844 14.2148 0.125 15.25 0.125C16.2852 0.125 17.125 0.964844 17.125 2C17.125 3.03516 16.2852 3.875 15.25 3.875C14.2148 3.875 13.375 3.03516 13.375 2ZM7.125 2C7.125 0.964844 7.96484 0.125 9 0.125C10.0352 0.125 10.875 0.964844 10.875 2C10.875 3.03516 10.0352 3.875 9 3.875C7.96484 3.875 7.125 3.03516 7.125 2ZM4.625 2C4.625 3.03516 3.78555 3.875 2.75 3.875C1.71445 3.875 0.875 3.03516 0.875 2C0.875 0.964844 1.71445 0.125 2.75 0.125C3.78555 0.125 4.625 0.964844 4.625 2Z" fill="currentColor" />
               </svg>
             </label>
           </div>
         </div>
         {dropdown && <div className='relative'>
-          <ul class="dropdown-content menu p-0 shadow bg-base-100 rounded w-[123px] absolute right-[16px]  top-[0px] z-20 -mt-[24px]">
+          <ul class="dropdown-content menu p-0 shadow bg-base-100 rounded w-[123px] absolute right-[16px] desktop-lg:right-[400px] top-[0px] z-20 -mt-[24px]">
             <Link to="/edit" state={list}>
               <li className='hover:bg-hover' >
                 <div className='font-semibold active:text-cursor-teal text-off-black active:fill-cursor-teal leading-[18px]'>
