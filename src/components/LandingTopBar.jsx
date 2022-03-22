@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import propic from '../icons/gary-vaynerchuk-hero1.svg'
+import dog from '../icons/dog-face.svg'
 
 const LandingTopBar = (props) => {
   return (
@@ -8,7 +9,7 @@ const LandingTopBar = (props) => {
           <div className="flex items-center">
             <div className="avatar">
               <div className="rounded-full w-[40px]">
-                <img src={propic} alt="gary vaynerchuk" />
+                <img src={dog} alt="gary vaynerchuk" />
               </div>
             </div>
             <div className="flex-auto font-bold text-lg ml-[16px] p-0">
