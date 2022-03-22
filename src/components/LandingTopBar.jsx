@@ -13,7 +13,7 @@ const LandingTopBar = (props) => {
               </div>
             </div>
             <div className="flex-auto font-bold text-lg ml-[16px] p-0">
-              Checklist
+              Lists
             </div>
             <div className="flex items-center justify-center active:text-cursor-teal w-[40px] h-[40px] hover:bg-hover rounded">
               <Link to="/create-list" className="">
